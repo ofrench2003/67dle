@@ -110,8 +110,16 @@ function endGame(won) {
 
     if (won) {
         const count = guessedNames.size;
-        message.textContent = `Correct! You got it in ${count} ${count === 1 ? "guess" : "guesses"}!`;
+        //message.textContent = `Correct! You got it in ${count} ${count === 1 ? "guess" : "guesses"}!`;
         message.classList.add("win");
+        
+        const winGif = document.createElement("img");
+        winGif.src = "https://media1.tenor.com/m/YKWtwUKxO-QAAAAd/67-6767.gif";
+        winGif.alt = "67";
+        winGif.classList.add("win-gif");
+
+        message.appendChild(winGif);
+
     } else {
         message.textContent = `The number was ${target.name}. Better luck tomorrow!`;
         message.classList.add("lose");
